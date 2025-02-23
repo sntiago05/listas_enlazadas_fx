@@ -22,6 +22,7 @@ public class HelloController {
     private ListaEnlazada<Integer> lista;
     @FXML
     ScrollPane scrollPane;
+
     @FXML
     ComboBox<Direccion> comboDireccion;
 
@@ -38,6 +39,13 @@ public class HelloController {
         agregarNodo();
     }
 
+    @FXML
+    protected void limpiarLista() {
+        lista.limpiar();
+        canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+    }
+
+
     private void agregarNodo() {
         lista.ingresar(new Nodo<>(Integer.parseInt(elementoTxt.getText())), comboDireccion.getValue());
         ajustarCanvas();
@@ -50,7 +58,6 @@ public class HelloController {
         double y = canvas.getHeight() / 2;
         Nodo<Integer> auxiliar = lista.ptr;
 
-        // Dibujar "Inicio" solo si la lista no está vacía
         if (lista.noEstaVacia()) {
             graphicContext.setFill(Color.GREEN);
             graphicContext.fillText("PTR", 30, y - 30);
@@ -60,7 +67,7 @@ public class HelloController {
         while (auxiliar != null) {
             int valor = auxiliar.getComponente();
 
-            // Dibujar nodo
+
             graphicContext.setFill(Color.web("#333399"));
             graphicContext.fillOval(x, y - 30, 60, 60);  // Aumentar el tamaño del óvalo
             graphicContext.setStroke(Color.BLACK);
@@ -70,20 +77,20 @@ public class HelloController {
             graphicContext.setFill(Color.WHITE);
             graphicContext.fillText(String.valueOf(valor), x + 25, y + 5);  // Ajustar la posición del texto
 
-            // Dibujar flecha si no es el último nodo
+
             if (auxiliar.siguiente != null) {
                 graphicContext.strokeLine(x + 60, y, x + 100, y);  // Ajustar la posición de la flecha
                 graphicContext.strokeLine(x + 90, y - 5, x + 100, y);  // Ajustar la posición de la flecha
                 graphicContext.strokeLine(x + 90, y + 5, x + 100, y);  // Ajustar la posición de la flecha
             } else {
-                // Si es el último nodo, dibujar "Fin"
+
                 graphicContext.setFill(Color.RED);
                 graphicContext.fillText("T", x + 90, y - 30);  // Ajustar la posición del texto "Fin"
                 graphicContext.strokeLine(x + 60, y - 5, x + 90, y - 25);  // Ajustar la posición de la flecha
             }
 
             // Moverse al siguiente nodo
-            x += 100;  // Aumentar el espacio entre nodos
+            x += 100;
             auxiliar = auxiliar.siguiente;
         }
     }

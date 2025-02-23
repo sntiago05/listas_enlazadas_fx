@@ -50,4 +50,9 @@ public class ListaEnlazada<T> {
         return this.contador > 0;
     }
 
+    public void limpiar() {
+        ptr = null;
+        t = null;
+        contador = 0;
+    }
 }

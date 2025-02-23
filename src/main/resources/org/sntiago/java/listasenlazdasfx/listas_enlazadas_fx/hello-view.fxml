@@ -8,7 +8,7 @@
 
 <VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.HelloController">
     <children>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="22.0" style="-fx-background-color: #333399;">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" style="-fx-background-color: #333399;">
             <opaqueInsets>
                 <Insets />
             </opaqueInsets>
@@ -24,6 +24,7 @@
                 <TextField fx:id="elementoTxt" />
             <ComboBox fx:id="comboDireccion" prefWidth="150.0" promptText="Direccion" visibleRowCount="2" />
                 <Button fx:id="buttonAgregar" mnemonicParsing="false" onAction="#agregar" text="AGREGAR" />
+            <Button mnemonicParsing="false" onAction="#limpiarLista" text="LIMPIAR" />
             </children>
         </HBox>
       <ScrollPane fx:id="scrollPane" prefWidth="699.0">
