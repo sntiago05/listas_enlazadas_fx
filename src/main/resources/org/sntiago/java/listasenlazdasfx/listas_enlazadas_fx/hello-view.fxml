@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.HelloController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="22.0" style="-fx-background-color: #333399;">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <Label text="INGRESA UN ELEMENTO" textFill="WHITE">
+                    <font>
+                        <Font name="Franklin Gothic Medium" size="18.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="elementoTxt" />
+            <ComboBox fx:id="comboDireccion" prefWidth="150.0" promptText="Direccion" visibleRowCount="2" />
+                <Button fx:id="buttonAgregar" mnemonicParsing="false" onAction="#agregar" text="AGREGAR" />
+            </children>
+        </HBox>
+      <ScrollPane fx:id="scrollPane" prefWidth="699.0">
+         <content>
+                <Canvas fx:id="canvas" height="274.0" />
+         </content>
+      </ScrollPane>
+    </children>
+</VBox>
