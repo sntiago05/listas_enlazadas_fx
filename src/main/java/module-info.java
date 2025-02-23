@@ -7,4 +7,6 @@ module org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx {
 
     opens org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx to javafx.fxml;
     exports org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx;
+    exports org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.controller;
+    opens org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.controller to javafx.fxml;
 }

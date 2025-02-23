@@ -1,4 +1,4 @@
-package org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx;
+package org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -12,7 +12,7 @@ import org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.model.Direccion;
 import org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.model.ListaEnlazada;
 import org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.model.Nodo;
 
-public class HelloController {
+public class ListaViewController {
     @FXML
     Canvas canvas;
     @FXML
