@@ -25,7 +25,7 @@ public class ListaViewController {
 
     @FXML
     ComboBox<Direccion> comboDireccion;
-
+    private int contador = 1;
     @FXML
     public void initialize() {
         lista = new ListaEnlazada<>();
@@ -48,6 +48,7 @@ public class ListaViewController {
 
     private void agregarNodo() {
         lista.ingresar(new Nodo<>(Integer.parseInt(elementoTxt.getText())), comboDireccion.getValue());
+        dibujar();
         ajustarCanvas();
     }
 
@@ -58,7 +59,7 @@ public class ListaViewController {
         double y = canvas.getHeight() / 2;
         Nodo<Integer> auxiliar = lista.ptr;
 
-        if (lista.noEstaVacia()) {
+        if (lista.ptr!=null) {
             graphicContext.setFill(Color.GREEN);
             graphicContext.fillText("PTR", 30, y - 30);
             graphicContext.strokeLine(30, y - 25, 50, y - 5);
@@ -66,18 +67,13 @@ public class ListaViewController {
 
         while (auxiliar != null) {
             int valor = auxiliar.getComponente();
-
-
             graphicContext.setFill(Color.web("#333399"));
             graphicContext.fillOval(x, y - 30, 60, 60);  // Aumentar el tamaño del óvalo
             graphicContext.setStroke(Color.BLACK);
             graphicContext.strokeOval(x, y - 30, 60, 60);  // Aumentar el tamaño del óvalo
-
             // Dibujar valor en el nodo
             graphicContext.setFill(Color.WHITE);
             graphicContext.fillText(String.valueOf(valor), x + 25, y + 5);  // Ajustar la posición del texto
-
-
             if (auxiliar.siguiente != null) {
                 graphicContext.strokeLine(x + 60, y, x + 100, y);  // Ajustar la posición de la flecha
                 graphicContext.strokeLine(x + 90, y - 5, x + 100, y);  // Ajustar la posición de la flecha
@@ -96,8 +92,9 @@ public class ListaViewController {
     }
 
     private void ajustarCanvas() {
-        double nuevoAncho = lista.getTotal() * 150;
+        double nuevoAncho = contador * 150;
         canvas.setWidth(nuevoAncho);
         dibujar();
+        contador++;
     }
 }

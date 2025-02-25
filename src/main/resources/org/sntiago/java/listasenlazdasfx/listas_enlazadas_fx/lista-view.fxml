@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.controller.ListaViewController">
+<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.controller.ListaViewController">
     <children>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" style="-fx-background-color: #333399;">
             <opaqueInsets>
@@ -30,7 +29,7 @@
         </HBox>
       <ScrollPane fx:id="scrollPane" prefWidth="699.0">
          <content>
-                <Canvas fx:id="canvas" height="274.0" />
+                <Canvas fx:id="canvas" height="274.0" width="150.0" />
          </content>
       </ScrollPane>
     </children>
